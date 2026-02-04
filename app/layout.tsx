@@ -12,10 +12,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata: Metadata = {
-//   title: "A small web surprise?",
-//   description: "This made me smile, hope it does the same",
-// };
+export const metadata: Metadata = {
+  title: "Click here to view?",
+  description: ".....",
+};
 
 export default function RootLayout({
   children,
