@@ -96,24 +96,24 @@ export default function Home() {
     return () => clearInterval(animationInterval);
   }, [noPosition]);
 
-  const handleYes = async () => {
-    // Send email notification
-    try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+  const handleYes = () => {
+    // Send email notification in the background without waiting
+    fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("Email sent successfully!");
+        }
+      })
+      .catch((error) => {
+        console.error("Failed to send email:", error);
       });
 
-      if (response.ok) {
-        console.log("Email sent successfully!");
-      }
-    } catch (error) {
-      console.error("Failed to send email:", error);
-    }
-
-    // Navigate to the yay page
+    // Navigate to the yay page immediately
     router.push("/yay");
   };
 
