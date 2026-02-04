@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Will you be my Valentine?",
-  description: "A cute little Valentine app with a shy No button.",
+  title: "A small web surprise?",
+  description: "This made me smile, hope it does the same",
 };
 
 export default function RootLayout({
